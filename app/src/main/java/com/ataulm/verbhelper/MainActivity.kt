@@ -1,43 +1,33 @@
 package com.ataulm.verbhelper
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
 import androidx.compose.material.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.room.*
 import com.ataulm.verbhelper.ui.theme.VerbHelperTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initDb()
+
         setContent {
             VerbHelperTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Greeting("Android")
-                }
+                Text(text = "hey")
             }
         }
     }
-}
 
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
+    private fun initDb() {
+        val database: VerbsDatabase =
+            Room.databaseBuilder(applicationContext, VerbsDatabase::class.java, "verbs.db")
+                .createFromAsset("verbs.db")
+                .allowMainThreadQueries() // TODO: let's not
+                .build()
 
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    VerbHelperTheme {
-        Greeting("Android")
+        val result = database.verb().query("comer")
+        Log.d("!!!", result.toString())
     }
 }

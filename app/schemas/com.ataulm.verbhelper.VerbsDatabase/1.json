@@ -1,0 +1,232 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "98f0a3228458c4b2917db6d046f4a81d",
+    "entities": [
+      {
+        "tableName": "gerund",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`infinitive` TEXT NOT NULL, `gerund_english` TEXT NOT NULL, `gerund` TEXT NOT NULL, PRIMARY KEY(`infinitive`))",
+        "fields": [
+          {
+            "fieldPath": "infinitive",
+            "columnName": "infinitive",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gerundEnglish",
+            "columnName": "gerund_english",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "gerund",
+            "columnName": "gerund",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "infinitive"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "infinitive",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`infinitive` TEXT NOT NULL, `infinitive_english` TEXT NOT NULL, PRIMARY KEY(`infinitive`))",
+        "fields": [
+          {
+            "fieldPath": "infinitive",
+            "columnName": "infinitive",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "infinitiveEnglish",
+            "columnName": "infinitive_english",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "infinitive"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "mood",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`mood` TEXT NOT NULL, `mood_english` TEXT NOT NULL, PRIMARY KEY(`mood`))",
+        "fields": [
+          {
+            "fieldPath": "mood",
+            "columnName": "mood",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "moodEnglish",
+            "columnName": "mood_english",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "mood"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "pastparticiple",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`infinitive` TEXT NOT NULL, `pastparticiple` TEXT NOT NULL, `pastparticiple_english` TEXT NOT NULL, PRIMARY KEY(`infinitive`))",
+        "fields": [
+          {
+            "fieldPath": "infinitive",
+            "columnName": "infinitive",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pastParticiple",
+            "columnName": "pastparticiple",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pastParticipleEnglish",
+            "columnName": "pastparticiple_english",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "infinitive"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "tense",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`tense` TEXT NOT NULL, `tense_english` TEXT NOT NULL, PRIMARY KEY(`tense`))",
+        "fields": [
+          {
+            "fieldPath": "tense",
+            "columnName": "tense",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tenseEnglish",
+            "columnName": "tense_english",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "tense"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "verbs",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`infinitive` TEXT NOT NULL, `mood` TEXT NOT NULL, `tense` TEXT NOT NULL, `verb_english` TEXT NOT NULL, `form_1s` TEXT NOT NULL, `form_2s` TEXT NOT NULL, `form_3s` TEXT NOT NULL, `form_1p` TEXT NOT NULL, `form_2p` TEXT NOT NULL, `form_3p` TEXT NOT NULL, PRIMARY KEY(`infinitive`, `mood`, `tense`))",
+        "fields": [
+          {
+            "fieldPath": "infinitive",
+            "columnName": "infinitive",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mood",
+            "columnName": "mood",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tense",
+            "columnName": "tense",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "verbEnglish",
+            "columnName": "verb_english",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "firstPersonSingular",
+            "columnName": "form_1s",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "secondPersonSingular",
+            "columnName": "form_2s",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "thirdPersonSingular",
+            "columnName": "form_3s",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "firstPersonPlural",
+            "columnName": "form_1p",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "secondPersonPlural",
+            "columnName": "form_2p",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "thirdPersonPlural",
+            "columnName": "form_3p",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "infinitive",
+            "mood",
+            "tense"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '98f0a3228458c4b2917db6d046f4a81d')"
+    ]
+  }
+}
